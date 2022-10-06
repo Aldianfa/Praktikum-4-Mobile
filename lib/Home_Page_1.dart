@@ -20,11 +20,11 @@ class Home_Page extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: Colors.black
+          color: Colors.white
         ),),
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 207, 53, 51),
         leading: new IconButton(
-          icon: new Icon(Icons.arrow_back_ios, color: Colors.amberAccent),
+          icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             print('object');
             Navigator.of(context).pop();
@@ -37,7 +37,7 @@ class Home_Page extends StatelessWidget {
           Padding(padding: EdgeInsets.only(bottom: 15)),
           Container(
             width: 320,
-            height: 45,
+            height: 55,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               border: Border.all(

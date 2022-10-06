@@ -15,9 +15,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 207, 53, 51),
         leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.black,),
+          icon: new Icon(Icons.arrow_back, color: Colors.white,),
           onPressed: () {
             print('kembali');
             Navigator.of(context).pop();
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
-              color: Color.fromARGB(255, 255, 166, 1)
+              color: Color.fromARGB(255, 207, 53, 51)
             ),
             )
             ),
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 320,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 166, 1),
+                        primary: Color.fromARGB(255, 207, 53, 51),
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                         ),
@@ -118,7 +118,10 @@ class _LoginPageState extends State<LoginPage> {
                         print('tess');
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home_Page()));
                       },
-                      child: Text('Login'),
+                      child: Text('Login',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),),
                     ),
                   ),
 
@@ -135,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 255, 166, 1)
+                            color: Color.fromARGB(255, 207, 53, 51)
                           ),),
                           onPressed: () {
                             print('object');

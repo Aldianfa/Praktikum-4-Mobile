@@ -61,7 +61,9 @@ flutter:
   assets:
     - assets/images/mie.png
     - assets/images/logo2.png
-    - assets/images/gambar.png 
+    - assets/images/logo3.png
+    - assets/images/gambar.png
+    - assets/images/shoes.png 
     - assets/grid/1.png
     - assets/grid/2.png
     - assets/grid/3.png

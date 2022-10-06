@@ -17,11 +17,11 @@ class OnboardingPage extends StatelessWidget {
         children: [
           SizedBox(height: 20,),
           
-          Image.asset('assets/images/logo2.png', height: 70, width: 78),
+          Image.asset('assets/images/logo3.png', height: 90, width: 98),
 
           SizedBox(height: 20,),
 
-          Image.asset('assets/images/mie.png', height: 280, width: 280,),
+          Image.asset('assets/images/shoes.png', height: 280, width: 280,),
           
           // Container(
           //   width: 150,
@@ -43,7 +43,7 @@ class OnboardingPage extends StatelessWidget {
           SizedBox(height: 20,),
 
           
-          Text('All your \n favourite ramen', textAlign: TextAlign.center,
+          Text('All your \n favourite Sneakers', textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class OnboardingPage extends StatelessWidget {
 
           SizedBox(height: 10,),
           
-          Text('Delicious as is or tossed with your \n favourite ingredients', 
+          Text('Improve your looks from our \n Best Sneakers', 
           textAlign: TextAlign.center, 
           style: TextStyle(
             fontSize: 16,
