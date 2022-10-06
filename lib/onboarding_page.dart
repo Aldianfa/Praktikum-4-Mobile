@@ -68,7 +68,7 @@ class OnboardingPage extends StatelessWidget {
             width: 320,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-              primary: Color.fromARGB(255, 255, 166, 1),
+              primary: Color.fromARGB(255, 207, 53, 51),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -112,7 +112,7 @@ class OnboardingPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey
+                color: Color.fromRGBO(207, 53, 51, 100)
               ),
             ),
             ),

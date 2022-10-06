@@ -36,16 +36,15 @@ class Home_Page extends StatelessWidget {
         children: [
           Padding(padding: EdgeInsets.only(bottom: 15)),
           Container(
-            width: double.infinity,
-            // width: 320,
-            // height: 45,
-            // decoration: BoxDecoration(
-            //   borderRadius: BorderRadius.circular(20),
-            //   border: Border.all(
-            //     color: Color.fromARGB(255, 39, 40, 40),
+            width: 320,
+            height: 45,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: Colors.black.withOpacity(0.5),
                 
-            //     )
-            // ),
+                )
+            ),
             
             child: TextField(
               decoration: InputDecoration(
@@ -60,7 +59,7 @@ class Home_Page extends StatelessWidget {
           const Padding(padding: EdgeInsets.all(10)),
           const Padding(
             padding: EdgeInsets.only(right: 230),
-            child: Text('Top Menu',
+            child: Text('Top Sneakers',
             textAlign: TextAlign.center,
             style: 
             TextStyle(
