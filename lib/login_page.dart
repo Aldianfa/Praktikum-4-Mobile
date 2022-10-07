@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:praktikum3/Home_Page_1.dart';
-import 'package:praktikum3/home_page.dart';
+import 'package:praktikum3/sharedpref.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,8 +12,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
+
   @override
   Widget build(BuildContext context) {
+    SharedPref.pref.setString('isDarkMode','ini Mode Dark');
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 207, 53, 51),

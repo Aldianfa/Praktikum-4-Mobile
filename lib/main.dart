@@ -5,11 +5,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:praktikum3/Home_Page_1.dart';
-import 'package:praktikum3/home_page.dart';
 import 'package:praktikum3/login_page.dart';
 import 'package:praktikum3/onboarding_page.dart';
+import 'package:praktikum3/sharedpref.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  runApp(MyApp());
+  await SharedPref.init();
+
+} 
 
 class MyApp extends StatelessWidget {
 

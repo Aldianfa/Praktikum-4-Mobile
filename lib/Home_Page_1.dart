@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum3/sharedpref.dart';
 
 class Home_Page extends StatelessWidget {
   const Home_Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String darkmode = SharedPref.pref.getString('isDarkMode') as String;
+
+    print(darkmode);
+
     List <String> Gambar = [
       "1.png",
       "2.png",
