@@ -5,18 +5,25 @@ import 'package:praktikum3/sharedpref.dart';
 
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  Function setTheme;
+  LoginPage({Key? key, required this.setTheme}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
+  ThemeData themeData = ThemeData.light();
+
+  void setTheme(bool isDarkMode) {
+    setState(() {
+      themeData = (isDarkMode) ? ThemeData.dark() : ThemeData.light();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    SharedPref.pref.setString('isDarkMode','ini Mode Dark');
+    SharedPref.pref?.setString('isDarkMode','ini Mode Dark');
     
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +36,8 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
       ),
-      body: Container(
+      body: 
+      Container(
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onPressed: () {
                         print('tess');
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home_Page()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home_Page(setTheme: setTheme),));
                       },
                       child: Text('Login',
                       style: TextStyle(
@@ -147,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),),
                           onPressed: () {
                             print('object');
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home_Page()));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home_Page(setTheme: setTheme,)));
                           },
                         )
                       ],

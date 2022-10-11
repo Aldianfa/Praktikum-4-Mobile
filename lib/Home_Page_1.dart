@@ -1,13 +1,23 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:praktikum3/onboarding_page.dart';
 import 'package:praktikum3/sharedpref.dart';
 
-class Home_Page extends StatelessWidget {
-  const Home_Page({Key? key}) : super(key: key);
+class Home_Page extends StatefulWidget {
+  Function setTheme;
+  Home_Page({Key? key, required this.setTheme}) : super(key: key);
+
+  @override
+  State<Home_Page> createState() => _Home_PageState();
+}
+
+class _Home_PageState extends State<Home_Page> {
+  bool isDarkMode = false;
+
 
   @override
   Widget build(BuildContext context) {
-    String darkmode = SharedPref.pref.getString('isDarkMode') as String;
-
+    String darkmode = SharedPref.pref?.getString('isDarkMode') ?? "ini Darkmode";
     print(darkmode);
 
     List <String> Gambar = [
@@ -28,11 +38,27 @@ class Home_Page extends StatelessWidget {
           color: Colors.white
         ),),
         backgroundColor: Color.fromARGB(255, 207, 53, 51),
+
+        actions: [
+          Padding(padding: EdgeInsets.only(left: 50)),
+          IconButton(
+            icon: new Icon(Icons.sunny),
+            onPressed: () {
+              print('settings');
+              
+              isDarkMode =!isDarkMode;
+              widget.setTheme(isDarkMode);
+            },
+          ),
+          
+        ],
+
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             print('object');
-            Navigator.of(context).pop();
+            // Navigator.of(context).pushReplacement();
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnboardingPage(),),);
           },
         ),
       ),
@@ -89,23 +115,17 @@ class Home_Page extends StatelessWidget {
           )
         ],
       ),
-    //   bottomNavigationBar: BottomNavigationBar(
-    //     items: const <BottomNavigationBarItem>[
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.home),
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.home),
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.home),
-    //       ),
-    //     ],
-    //     currentIndex: 0,
-    //     selectedItemColor: Color.fromARGB(255, 255, 166, 1),
-    //     unselectedItemColor: Colors.grey,
-    //     showUnselectedLabels: true
-    // ),
+      bottomNavigationBar: ConvexAppBar(
+        backgroundColor: Color.fromARGB(255, 207, 53, 51),
+        items: [
+          TabItem(icon: Icons.shopping_bag_rounded, title: 'shop'),
+          TabItem(icon: Icons.message_rounded, title: 'Message'),
+          TabItem(icon: Icons.home_rounded, title: 'Home'),
+          TabItem(icon: Icons.people_alt_rounded, title: 'profile'),
+          TabItem(icon: Icons.settings_rounded, title: 'settings'),
+        ],
+        initialActiveIndex: 2,
+      ),
     );
   }
 }

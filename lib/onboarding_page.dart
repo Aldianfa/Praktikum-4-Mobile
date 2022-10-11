@@ -2,10 +2,21 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum3/login_page.dart';
 
-class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({
-    Key? key,
-  }) : super(key: key);
+class OnboardingPage extends StatefulWidget {
+  const OnboardingPage({Key? key,}) : super(key: key);
+
+  @override
+  State<OnboardingPage> createState() => _OnboardingPageState();
+}
+
+class _OnboardingPageState extends State<OnboardingPage> {
+  ThemeData themeData = ThemeData.light();
+
+  void setTheme(bool isDarkMode) {
+    setState(() {
+      themeData = (isDarkMode) ? ThemeData.dark() : ThemeData.light();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +87,7 @@ class OnboardingPage extends StatelessWidget {
             onPressed:(){
               print("tesss");
               // Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(setTheme: setTheme,)));
             },
             
             child: const Text(
@@ -105,7 +116,7 @@ class OnboardingPage extends StatelessWidget {
             onPressed:(){
               print("tesss");
               // Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(setTheme: setTheme)));
             },
             child: const Text(
               'Login',
