@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),),
                           onPressed: () {
                             print('object');
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home_Page(setTheme: setTheme,)));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage(setTheme: setTheme,)));
                           },
                         )
                       ],
