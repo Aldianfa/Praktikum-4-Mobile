@@ -58,7 +58,7 @@ class _Home_PageState extends State<Home_Page> {
           onPressed: () {
             print('object');
             // Navigator.of(context).pushReplacement();
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnboardingPage(),),);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingPage(),),);
           },
         ),
       ),
@@ -102,17 +102,40 @@ class _Home_PageState extends State<Home_Page> {
 
           Padding(padding: EdgeInsets.only(bottom: 5)),
           Expanded(
-            child: GridView.builder(
-              itemCount: Gambar.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              itemBuilder: (context, i) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/grid/${Gambar[i]}'),
-                );
-              },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                itemCount: Gambar.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1,
+                mainAxisSpacing: 15,
+                crossAxisSpacing: 15
+                ),
+                itemBuilder: (context, i) {
+                  return Container(
+                    // height: 70,
+                    // width: 160,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset: Offset(0,3)
+                        )
+                      ],
+                      image: DecorationImage(image: AssetImage('assets/grid/${Gambar[i]}'),fit: BoxFit.fill)
+                    ),
+                  );
+                },
+              ),
             )
           )
+
+
         ],
       ),
       bottomNavigationBar: ConvexAppBar(

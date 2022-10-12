@@ -16,9 +16,12 @@ class _LoginPageState extends State<LoginPage> {
   ThemeData themeData = ThemeData.light();
 
   void setTheme(bool isDarkMode) {
-    setState(() {
+    if (mounted){
+        setState(() {
       themeData = (isDarkMode) ? ThemeData.dark() : ThemeData.light();
     });
+      }
+    
   }
 
   @override
