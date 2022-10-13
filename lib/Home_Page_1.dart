@@ -29,8 +29,6 @@ class _Home_PageState extends State<Home_Page> {
       "6.png",
     ];
 
-    
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -92,9 +90,10 @@ class _Home_PageState extends State<Home_Page> {
               'Top Sneakers',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                fontSize: 20,
+                fontWeight: FontWeight.bold, 
+                // color: Colors.black
+              ),
             ),
           ),
           Padding(padding: EdgeInsets.only(bottom: 5)),
