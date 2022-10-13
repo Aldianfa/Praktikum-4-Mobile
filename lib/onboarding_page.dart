@@ -68,7 +68,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.normal,
-            color: Colors.black.withOpacity(0.5),
+            // color: Colors.black.withOpacity(0.5),
+            color: Color.fromARGB(255, 207, 53, 51),
           ),
           ),
           
